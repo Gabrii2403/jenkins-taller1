@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Descargar código') {
             steps {
-                git 'https://github.com/Gabrii2403/jenkins-taller1'
+                git branch: 'main', url: 'https://github.com/Gabrii2403/jenkins-taller1'
             }
         }
 
