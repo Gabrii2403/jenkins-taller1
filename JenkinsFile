@@ -23,12 +23,12 @@ pipeline {
 
     post {
         success {
-            mail to: 'tu-correo@ejemplo.com',
+            mail to: 'gabrielferraz46@gmail.com',
                  subject: 'Pipeline exitoso',
                  body: 'La ejecución fue completada sin errores.'
         }
         failure {
-            mail to: 'tu-correo@ejemplo.com',
+            mail to: 'gabrielferraz46@gmail.com',
                  subject: 'Pipeline con errores',
                  body: 'La ejecución falló. Revisa el log.'
         }
