@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Descargar código') {
+            steps {
+                git 'https://github.com/Gabrii2403/jenkins-taller1'
+            }
+        }
+
+        stage('Compilar') {
+            steps {
+                sh 'echo Compilando...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo Ejecutando tests...'
+            }
+        }
+    }
+
+    post {
+        success {
+            mail to: 'tu-correo@ejemplo.com',
+                 subject: 'Pipeline exitoso',
+                 body: 'La ejecución fue completada sin errores.'
+        }
+        failure {
+            mail to: 'tu-correo@ejemplo.com',
+                 subject: 'Pipeline con errores',
+                 body: 'La ejecución falló. Revisa el log.'
+        }
+    }
+}
